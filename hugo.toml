@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://my-site-7cx.pages.dev/'
 languageCode = 'ja-jp'
 title = 'My Site'
-theme = 'newsroom'
+theme = ["github.com/onweru/newsroom"]
 disableKinds = ['rss']
