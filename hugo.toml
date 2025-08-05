@@ -3,3 +3,4 @@ languageCode = 'ja-jp'
 title = 'My Site'
 theme = ["github.com/onweru/newsroom"]
 disableKinds = ['rss']
+enableRobotsTXT = true
