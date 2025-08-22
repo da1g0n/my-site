@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="container">
+  <section class="hero">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Content }}</p>
+  </section>
+
+  <section class="articles-grid">
+    {{ range .Pages }}
+    <article class="article-card">
+
+      <div class="article-image">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image }}" />
+        {{ end }}
+      </div>
+      <div class="article-content">
+        <h2 class="article-title">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h2>
+      
+        <!--
+        <div class="article-summary">
+          {{ .Summary }}
+        </div>
+        -->
+        <div class="article-meta">
+          <time datetime='{{ .Date.Format "2006-01-02"}}'>
+            {{ .Date.Format "2006-01-02" }}
+          </time>
+          {{ if .Params.tags }}
+          <div class="article-tags">
+            {{ range .Params.tags }}
+            <a href='{{ "/tags/" | relURL }}{{ . | urlize }}' class="tag">#{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </section>
+</div>
+{{ end }}

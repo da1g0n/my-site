@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container">
+  <a href='{{ "/" | relURL }}' class="back-link">記事一覧に戻る</a>
+
+  <div class="article-detail">
+    <header class="article-header">
+      <img src="{{ .Params.image }}" />
+      <h1>{{ .Title }}</h1>
+
+      <div class="article-meta-detail">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+        {{ if .Params.tags }}
+        <div class="article-tags-detail">
+          {{ range .Params.tags }}
+          <a href='{{ "/tags/" | relURL }}{{ . | urlize }}' class="tag">#{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

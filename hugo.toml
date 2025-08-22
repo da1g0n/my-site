@@ -1,6 +1,6 @@
 baseURL = 'https://my-site-7cx.pages.dev/'
 languageCode = 'ja-jp'
 title = 'My Site'
-theme = ["github.com/onweru/newsroom"]
+theme = 'my-theme'
 disableKinds = ['rss']
 enableRobotsTXT = true
