@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="header-content">
+    <a href='{{ "/" | relURL }}' class="logo">{{ site.Title }}</a>
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  </div>
+</div>
